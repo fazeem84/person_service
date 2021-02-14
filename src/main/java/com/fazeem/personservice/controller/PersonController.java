@@ -38,7 +38,7 @@ public class PersonController {
         return new ResponseEntity<>( HttpStatus.NOT_FOUND);
     }
     @PostMapping("api/person")
-    @Operation(summary = "POST endpoint", security = @SecurityRequirement(name = "basicAuth"))
+    @Operation(summary = "Create Person endpoint", security = @SecurityRequirement(name = "basicAuth"))
     public ResponseEntity<PersonModel> postPerson(@RequestBody PersonPostModel personPostModel ) {
         PersonModel personModel=personService.postPerson(personPostModel);
         log.info("Response -> {}",personModel);
@@ -46,7 +46,7 @@ public class PersonController {
         return new ResponseEntity<>(personModel,HttpStatus.CREATED);
     }
     @PutMapping("api/person/{id}")
-    @Operation(summary = "PUT endpoint", security = @SecurityRequirement(name = "basicAuth"))
+    @Operation(summary = "Update the Existing Person", security = @SecurityRequirement(name = "basicAuth"))
     public ResponseEntity<PersonModel> putPerson(@PathVariable("id")Long id, @RequestBody PersonPostModel personPostModel) {
         if(personService.getById(id)==null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

@@ -18,6 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private MyBasicAuthenticationEntryPoint authenticationEntryPoint;
 
     private static final String   API_PATH="/api/*";
+    private static final String   RESOURCE_PATH=API_PATH+"/*";
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -32,8 +33,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests()
                 .antMatchers("/swag*").permitAll()
                 .antMatchers(HttpMethod.POST,API_PATH).authenticated()
-                .antMatchers(HttpMethod.PUT,API_PATH).authenticated()
-                .antMatchers(HttpMethod.DELETE,API_PATH).authenticated()
+                .antMatchers(HttpMethod.PUT,RESOURCE_PATH).authenticated()
+                .antMatchers(HttpMethod.DELETE,RESOURCE_PATH).authenticated()
                 .and()
                 .httpBasic()
                 .authenticationEntryPoint(authenticationEntryPoint);
