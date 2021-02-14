@@ -9,7 +9,7 @@ Tech Stack
 
 * Programming Langauge : Java 11
 * FrameWork : Spring Boot 2.4.2
-* Documentation : Swagger(Open Api)
+* API Guide : Swagger(Open Api)
 * Testing Framework: JUnit
 * Database : HSQL
 * DataBase Versioning : Flyway
@@ -31,7 +31,7 @@ Please find the simple steps build the Image and run the service in your Local M
 
 Accessing API
 -------------
-Swagger Documentation is Available with the deployed Service.
+Swagger  API Guide is Available with the deployed Service.
 Users Can Test the api through Swagger Portal .
 Swagger portal can be access through browser by accessing urls: 
 * http://{HostName}:{HostPort}/swagger-ui.html 
