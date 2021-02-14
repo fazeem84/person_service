@@ -99,7 +99,7 @@ public class PersonService {
         return personModel;
     }
 
-    public Metadata generateMetadata(Page personEntityPage) {
+    public Metadata generateMetadata(Page<PersonEntity> personEntityPage) {
         Metadata metadata = new Metadata();
         metadata.setPage(personEntityPage.getNumber());
         metadata.setSize(personEntityPage.getNumberOfElements());

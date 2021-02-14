@@ -17,20 +17,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private MyBasicAuthenticationEntryPoint authenticationEntryPoint;
 
+    private static final String   API_PATH="/api/*";
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user1").password(passwordEncoder().encode("password"))
+                .withUser("embl").password(passwordEncoder().encode("embl@123"))
                 .authorities("ROLE_USER");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.csrf().disable().
+                authorizeRequests()
                 .antMatchers("/swag*").permitAll()
-                .antMatchers(HttpMethod.POST,"/api/*").authenticated()
-                .antMatchers(HttpMethod.PUT,"/api/*").authenticated()
-                .antMatchers(HttpMethod.DELETE,"/api/*").authenticated()
+                .antMatchers(HttpMethod.POST,API_PATH).authenticated()
+                .antMatchers(HttpMethod.PUT,API_PATH).authenticated()
+                .antMatchers(HttpMethod.DELETE,API_PATH).authenticated()
                 .and()
                 .httpBasic()
                 .authenticationEntryPoint(authenticationEntryPoint);

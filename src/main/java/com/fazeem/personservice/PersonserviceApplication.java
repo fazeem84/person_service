@@ -1,7 +1,6 @@
 package com.fazeem.personservice;
 
 import lombok.extern.slf4j.Slf4j;
-import org.flywaydb.core.Flyway;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.flyway.FlywayMigrationStrategy;
@@ -22,7 +21,7 @@ public class PersonserviceApplication {
 	@Profile("test")
 	public FlywayMigrationStrategy cleanMigrateStrategy() {
 		log.info("****************************Flyway Testing Clean************");
-		return (flyway) ->{	flyway.clean();	flyway.migrate();};
+		return flyway ->{	flyway.clean();	flyway.migrate();};
 
 	}
 
