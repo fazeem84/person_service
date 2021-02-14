@@ -43,7 +43,8 @@ Limitations/TODO
 ----------------
 * Unique constraints(combination of firstName,lastName and age)  Implemented in DB side but the proper handling of DuplicateConstraint Exception need to be added
 * Build can be Refactored to support multi environment support so that  one image can be used for multiple environment
-* Authentaication Mechanism can be Improved(can Implement OAuth)
+* Authentication Mechanism can be Improved(can Implement OAuth)
+* ID field can be removed from GetBy ID 
 * Testing coverage need to improve
 * Static Analysis tolls can be Integrated with build
 * Integration with System like Heroku Travis
