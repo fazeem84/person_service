@@ -1,0 +1,15 @@
+spring:
+  flyway:
+    locations: classpath:db/migration
+    baselineOnMigrate: true
+  datasource:
+    url: jdbc:hsqldb:file:./appdb
+  jpa:
+    database-platform: org.hibernate.dialect.HSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+
+
+

@@ -1,0 +1,15 @@
+spring:
+  flyway:
+    locations: classpath:testdb/migration
+    baselineOnMigrate: true
+    clean-on-validation-error: true
+  datasource:
+    url: jdbc:hsqldb:file:./testdb
+  jpa:
+    database-platform: org.hibernate.dialect.HSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+
+
