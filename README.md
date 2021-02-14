@@ -1,4 +1,4 @@
-# person_service
+# Person Service
 
 Persons Service is Spring Boot based service which can be used for  storing, updating,
 retrieving and deleting Person the details of a Person.This service can be easily deployed as docker Image
